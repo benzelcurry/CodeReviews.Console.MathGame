@@ -7,7 +7,7 @@
         public string Name { get; set; } = "";
         public DateTime Date { get; set; } = DateTime.UtcNow;
 
-        private string Play()
+        private void Play()
         {
             if (History.Count > 0)
             {
@@ -56,8 +56,6 @@
             }
 
             PlayGame = (playAgain == "yes");
-
-            return playAgain;
         }
 
         public void Loop()
