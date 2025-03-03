@@ -2,7 +2,7 @@
 {
     internal class Game
     {
-        public List<int> History { get; set; } = [];
+        public List<(string, int)> History { get; set; } = [];
         public bool PlayGame { get; set; } = true;
         public string Name { get; set; } = "";
         public DateTime Date { get; set; } = DateTime.UtcNow;
@@ -29,16 +29,16 @@
             switch (gameSelected)
             {
                 case "a":
-                    History.Add(GameEngine.AdditionGame());
+                    History.Add(("Addition", GameEngine.AdditionGame()));
                     break;
                 case "s":
-                    History.Add(GameEngine.SubtractionGame());
+                    History.Add(("Subtraction", GameEngine.SubtractionGame()));
                     break;
                 case "m":
-                    History.Add(GameEngine.MultiplicationGame());
+                    History.Add(("Multiplication", GameEngine.MultiplicationGame()));
                     break;
                 case "d":
-                    History.Add(GameEngine.DivisionGame());
+                    History.Add(("Division", GameEngine.DivisionGame()));
                     break;
                 default:
                     Console.WriteLine("Invalid input detected. Application closing.");
