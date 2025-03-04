@@ -12,6 +12,7 @@
             S - Subtraction
             M - Multiplication
             D - Division
+            H - Display score history
             Q - Quit the program
             ");
             Console.WriteLine("------------------------------------------");

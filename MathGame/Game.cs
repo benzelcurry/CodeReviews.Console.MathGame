@@ -11,9 +11,7 @@
         {
             if (History.Count > 0)
             {
-                Console.WriteLine("Previous scores:");
-                Console.WriteLine(string.Join(", ", History));
-                Thread.Sleep(3000);
+                ShowPreviousGames();
             }
 
             if (string.IsNullOrEmpty(Name))
@@ -40,6 +38,9 @@
                 case "d":
                     History.Add(("Division", GameEngine.DivisionGame()));
                     break;
+                case "h":
+                    ShowPreviousGames();
+                    break;
                 default:
                     Console.WriteLine("Invalid input detected. Application closing.");
                     break;
@@ -64,6 +65,17 @@
             {
                 Play();
             }
+        }
+
+        private void ShowPreviousGames()
+        {
+            Console.WriteLine("Previous games played:\n");
+            foreach ((string type, int score) game in History)
+            {
+                Console.WriteLine($"{game.type}: {game.score}/5");
+            }
+            Console.WriteLine();
+            Thread.Sleep(1000);
         }
     }
 }
